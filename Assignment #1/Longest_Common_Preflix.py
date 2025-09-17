@@ -1,7 +1,7 @@
 class Solution:
     def longestCommonPrefix(self, strs: list[str]) -> str:
-        assert 1 <= len(strs) <= 200  # Constraints
-        assert all(0 <= len(s) <= 200 for s in strs)  # Constraints
+        assert 1 <= len(strs) <= 200  # constraints
+        assert all(0 <= len(s) <= 200 for s in strs)  # constraints
 
         max_len = max(len(word) for word in strs)  # gets the length of the longest word in the list
         min_len = min(len(word) for word in strs)  # gets the length of the smallest word in the list
@@ -32,10 +32,3 @@ class Solution:
                 output += current_slice[0]  # appends the common character to output
 
         return output
-
-
-
-# test code
-n = ["ab","abcc"]
-result = Solution().longestCommonPrefix(n)  # Create instance of Solution class
-print(result)
