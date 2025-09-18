@@ -1,9 +1,9 @@
 class Solution:
     def addDigits(self, num: int) -> int:
-        """Calculate the digital root of a number using the mathematical formula."""
+        """Calculate all the digit in a number added up using Digital Root."""
         MAXint = 2**31 - 1
 
-        if not (0 <= num <= MAXint): # constraints
+        if not (0 <= num <= MAXint): # Constraints
             raise ValueError("Num must be between 0 and {MAXint}")
         
         # Handle edge case
