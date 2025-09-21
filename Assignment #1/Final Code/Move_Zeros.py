@@ -1,13 +1,15 @@
 class Solution:
     def moveZeroes(self, nums: list[int]) -> None:
         """
-        Do not return anything, modify nums in-place instead.
+        Two-pointer approach: one for placing non-zero elements, one for scanning
+        Time: O(n), Space: O(1)
         """
-
-        assert 1 <= len(nums) <= 10**4 # constraints
-
-        for i in range(len(nums)): # constraints
-            assert -2**31 <= nums[i] <= 2**31 - 1
-
-        nums = nums.sort(key = lambda x: x == 0)  # used Ai to teach me how to use lambda properly and sort
-        return nums
+        # Pointer for the position where next non-zero element should go
+        left = 0
+        
+        # Scan through array with right pointer
+        for right in range(len(nums)):
+            # If current element is non-zero, place it at left position
+            if nums[right] != 0:
+                nums[left], nums[right] = nums[right], nums[left]
+                left += 1

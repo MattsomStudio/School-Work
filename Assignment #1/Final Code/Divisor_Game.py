@@ -1,4 +1,4 @@
-class SolutionExplicit:
+class Solution:
     def divisorGame(self, n: int) -> bool:
         '''
         Determines if Alice can win the Divisor Game.
@@ -14,11 +14,11 @@ class SolutionExplicit:
         if not (1 <= n <= 1000):
             raise ValueError("n must be between 1 and 1000")      
         # Alice wins when n is even
-        return (1 + (n - 1) % 9) % 2 == 0 # Optimized check for evenness
+        return n % 2 == 0
 
 
 # Test cases
-solution = SolutionExplicit()
+solution = Solution()
 n = 1
 print(solution.divisorGame(n))  # False
 n = 2
